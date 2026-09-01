@@ -33,9 +33,11 @@ const Body = () => {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen pb-20">
       <NavBar />
-      <Outlet />
+      <main className="pb-10">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

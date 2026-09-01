@@ -2,9 +2,11 @@ const UserCard = ({ user }) => {
   const { firstName, lastName, photoUrl, age, gender, about } = user;
   return (
     <div className="card bg-base-300 w-96 shadow-xl">
-      <figure>
-        <img src={photoUrl} alt="photo" />
-      </figure>
+      {photoUrl ? (
+        <figure>
+          <img src={photoUrl || null} alt="photo" />
+        </figure>
+      ) : null}
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>
         {age && gender && <p>{age + ", " + gender}</p>}
