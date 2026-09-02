@@ -33,9 +33,9 @@ const Body = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="flex min-h-screen flex-col">
       <NavBar />
-      <main className="pb-10">
+      <main className="flex-1 py-16">
         <Outlet />
       </main>
       <Footer />
