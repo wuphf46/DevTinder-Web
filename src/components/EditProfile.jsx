@@ -9,7 +9,7 @@ const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user && user.firstName ? user.firstName : "");
   const [lastName, setLastName] = useState(user && user.lastName ? user.lastName : "");
   const [photoUrl, setPhotoUrl] = useState(user && user.photoUrl ? user.photoUrl : "");
-  const [age, setAge] = useState(user && user.age ? user.age : 0);
+  const [age, setAge] = useState(user && user.age ? user.age : "");
   const [gender, setGender] = useState(user && user.gender ? user.gender : "");
   const [about, setAbout] = useState(user && user.about ? user.about : "");
   const [error, setError] = useState("");
@@ -22,7 +22,7 @@ const EditProfile = ({ user }) => {
     setFirstName(user.firstName || "");
     setLastName(user.lastName || "");
     setPhotoUrl(user.photoUrl || "");
-    setAge(user.age || 0);
+    setAge(user.age || "");
     setGender(user.gender || "");
     setAbout(user.about || "");
   }, [user]);
@@ -139,10 +139,11 @@ const EditProfile = ({ user }) => {
         </div>
         <UserCard
           user={{ firstName, lastName, photoUrl, age, gender, about }}
+          showActions={false}
         />
       </div>
       {showToast && (
-        <div className="toast toast-top toast-center">
+        <div className="toast toast-top toast-center z-50 mt-16">
           <div className="alert alert-success">
             <span>Profile saved successfully.</span>
           </div>
