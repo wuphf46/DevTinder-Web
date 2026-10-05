@@ -27,7 +27,7 @@ const NavBar = () => {
         </Link>
       </div>
       {user && (
-        <div className="flex-none gap-2">
+        <div className="flex justify-center items-center">
           <div className="form-control">Welcome, {user.firstName}</div>
           <div className="dropdown dropdown-end mx-5 flex">
             <div

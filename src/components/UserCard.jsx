@@ -19,16 +19,16 @@ const UserCard = ({ user, showActions = true }) => {
   };
 
   return (
-    <div className="card bg-base-300 w-96 shadow-xl">
+    <div className="card w-full overflow-hidden border border-base-300 bg-base-100 shadow-lg">
       {photoUrl ? (
-        <figure>
-          <img src={photoUrl || null} alt="photo" />
+        <figure className="h-80 bg-base-200 sm:h-96">
+          <img className="h-full w-full object-cover object-center" src={photoUrl || null} alt="photo" />
         </figure>
       ) : null}
-      <div className="card-body">
-        <h2 className="card-title">{firstName + " " + lastName}</h2>
-        {age && gender && <p>{age + ", " + gender}</p>}
-        <p>{about}</p>
+      <div className="card-body p-5">
+        <h2 className="card-title text-xl">{firstName + " " + lastName}</h2>
+        {age && gender && <p className="text-sm font-medium text-success">{age + ", " + gender}</p>}
+        <p className="text-base-content/70">{about}</p>
         {showActions && (
           <div className="card-actions justify-center my-4">
             <button
